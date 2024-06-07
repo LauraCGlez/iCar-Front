@@ -1,3 +1,31 @@
+:root {
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Colors */
+  --color-primary: #8DD3BB;
+  --color-secondary: #112211;
+  --color-accent: #FF8682;
+  --color-neutral: #FFFFFF;
+
+  /* Typography */
+  --font-primary: 'Monserrat', 'Ubuntu';
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Typography imports */
 @font-face {
   font-family: 'Monserrat';
@@ -29,28 +57,4 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-:root {
-  color-scheme: light dark;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Colors */
-  --color-primary: #8DD3BB;
-  --color-secondary: #112211;
-  --color-accent: #FF8682;
-  --color-neutral: #FFFFFF;
-
-  /* Typography */
-  --font-primary: 'Monserrat', 'Ubuntu';
 }
