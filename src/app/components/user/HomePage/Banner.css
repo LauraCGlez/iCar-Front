@@ -1,0 +1,25 @@
+.bannerMiniContainer {
+    transform: translateY(-18rem);
+}
+
+.cropped-image {
+    width: 100%;
+    height: 400px;
+    background-image: url("");
+    background-color: black;
+    background-size: cover;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.searchOlaCabButton {
+    /*height: 50px;*/
+    background-color: black;
+    box-sizing: border-box;
+    width: 282px;
+    text-align: left;
+    background-image: url("");
+    /*radial-gradient(127.68% 2996.56% at 12.65% 127.68%, #000000 0%, #222222 100%);*/
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border: none;
+}
