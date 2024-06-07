@@ -1,4 +1,8 @@
-const ICarLogo = () => {
+import React from 'react';
+
+interface ICarLogoProps extends React.SVGProps<SVGSVGElement> {}
+
+const ICarLogo = (props: ICarLogoProps) => {
   return (
     <svg
       width="550"
@@ -6,6 +10,7 @@ const ICarLogo = () => {
       viewBox="0 0 550 236"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         fillRule="evenodd"

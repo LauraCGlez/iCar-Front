@@ -1,0 +1,15 @@
+.nav-bar {
+    width: 100%;
+    padding: 0 var(--page-padding);
+}
+
+.nav-bar__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar__logo {
+    width: 110px;
+    height: 36px;
+}
