@@ -1,0 +1,36 @@
+.nav-bar {
+    display: flex;
+    width: 100%;
+    min-height: 5.438rem;
+    box-shadow: var(--color-secondary) 0 -1rem 1.25rem;
+}
+
+.nav-bar__content {
+    display: flex;
+    padding: 0 var(--page-padding-hz);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+}
+
+.nav-bar__list {
+    display: flex;
+    min-height: 100%;
+    gap: 2rem;
+}
+
+.nav-bar__list-item {
+    display: flex;
+    min-height: 100%;
+}
+
+.nav-bar__logo {
+    width: 6.875rem;
+    height: 2.25rem;
+}
+
+.nav-bar__login-section {
+    display: flex;
+    align-items: center;
+}
