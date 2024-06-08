@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
-        <Route path="*" element={<>404 - Not Found</>} />
+        <Route path="*" element={<div style={{padding: '6.5rem'}}>404 - Not Found</div>} />
       </Routes>
     </Router>
   );

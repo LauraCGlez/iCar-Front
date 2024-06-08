@@ -11,23 +11,32 @@ const NavBar = () => {
     <div className="nav-bar">
       <div className="nav-bar__content">
         <ul className="nav-bar__list">
-          <li className="nav-bar__item">
+          <li className="nav-bar__list-item">
             <NavLink
               to="/icars"
-              variant="primary"
+              variant="link"
               icon={<DirectionsCarRoundedIcon />}
             >
               Find iCars
             </NavLink>
           </li>
-          <li className="nav-bar__item">
-            <NavLink to="/stays" variant="primary" icon={<HotelRoundedIcon />}>
+          <li className="nav-bar__list-item">
+            <NavLink to="/stays" variant="link" icon={<HotelRoundedIcon />}>
               Find Stays
             </NavLink>
           </li>
         </ul>
-        <ICarLogo className="nav-bar__logo" />
-        <div>Login Section</div>
+        <NavLink variant="wrapper" to="/home">
+          <ICarLogo className="nav-bar__logo" />
+        </NavLink>
+        <div className="nav-bar__login-section">
+          <NavLink to="/login" variant="button-transparent">
+            Login
+          </NavLink>
+          <NavLink to="/signup" variant="button-filled">
+            Sign Up
+          </NavLink>
+        </div>
       </div>
     </div>
   );

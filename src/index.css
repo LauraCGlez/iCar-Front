@@ -36,7 +36,8 @@
   --font-size-40: 2.5rem; /* 40px */
 
   /* Spacing */
-  --page-padding: 6.5rem;
+  --page-padding-vt: 1.313rem;
+  --page-padding-hz: 6.5rem;
 }
 
 *,
@@ -56,6 +57,8 @@ a {
 }
 
 ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 

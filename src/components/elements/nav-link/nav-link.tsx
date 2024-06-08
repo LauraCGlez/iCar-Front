@@ -3,7 +3,7 @@ import React from 'react';
 import './nav-link.css';
 
 interface NavLinkProps extends LinkProps {
-  variant: 'primary';
+  variant: 'link' | 'button-filled' | 'button-transparent' | 'wrapper';
   icon?: React.ReactNode;
 }
 
@@ -18,7 +18,8 @@ const NavLink = (props: NavLinkProps) => {
 
   const getModifiers = () => {
     if (variant) {
-      return `${defaultClassName}--${variant}`;
+      const modifier = variant.replace('-', '--');
+      return `${defaultClassName}--${modifier}`;
     }
   }
 
