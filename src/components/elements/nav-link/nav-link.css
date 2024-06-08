@@ -12,7 +12,7 @@
     color: var(--color-secondary);
     transition: 0.5s;
     &:focus{
-        border-bottom-color: var(--color-primary);
+        border-bottom-color: var(--color-primary-75);
     }
     &:hover {
         svg {
@@ -26,7 +26,7 @@
     border-radius: 0.5rem;
     min-width: 6.5rem;
     height: 3rem;
-    color: var(--color-neutral);
+    color: var(--color-neutral-0);
     background-color: var(--color-secondary);
 }
 

@@ -1,0 +1,14 @@
+.footer {
+  background-color: #8f8c91;
+}
+
+.footer__content {
+  background-color: var(--color-primary-75);
+  padding-inline: var(--page-padding-hz);
+}
+
+.footer__card-container {
+  position: relative;
+  bottom: 9rem;
+  height: 14rem;
+}
