@@ -12,10 +12,10 @@ const ICarLogo = (props: ICarLogoProps) => {
   let secondaryColor = '#112211';
 
   if (variant === 'inverted') {
-    primaryColor = alternativeColor;
+    secondaryColor = alternativeColor;
   }
   if (variant === 'alternative') {
-    secondaryColor = alternativeColor;
+    primaryColor = alternativeColor;
   }
 
   return (

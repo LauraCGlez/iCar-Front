@@ -20,6 +20,7 @@
 
   --color-secondary: #112211;
   --color-secondary-op-80: #112211CC;
+  --color-secondary-op-70: #112211B3;
   --color-secondary-op-20: #11221133;
   --color-accent: #ff8682;
   --color-error: #FD736E;
@@ -67,7 +68,6 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--color-secondary);
 }
 
 ul {
