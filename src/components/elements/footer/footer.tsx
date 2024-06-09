@@ -4,8 +4,16 @@ import { FacebookRoundedIcon, InstagramIcon, XIcon, YouTubeIcon } from '../../..
 import NavLink from '../nav-link/nav-link.tsx';
 import ICarLogo from '../../../assets/vectors/logos/i-car-logo.tsx';
 import { EXTERNAL_URLS, APP_URLS } from '../../../constants/urls.ts';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Footer = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <footer className="footer">
       <div className="footer__content">
@@ -14,9 +22,9 @@ const Footer = () => {
         </div>
         <div className="footer__bottom">
           <div className="footer__social-container">
-            <div className="footer__logo">
-              <ICarLogo variant="alternative" />
-            </div>
+            <NavLink to={APP_URLS.HOME}>
+              <ICarLogo className="footer__logo" variant="alternative" />
+            </NavLink>
             <div className="footer__social">
               <a href={EXTERNAL_URLS.FACEBOOK} className="footer__social-link">
                 <FacebookRoundedIcon />

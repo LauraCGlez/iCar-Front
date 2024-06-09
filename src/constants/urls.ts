@@ -1,6 +1,6 @@
 export const APP_URLS = {
   BASE_URL: '/',
-  HOME: '/HOME',
+  HOME: '/home',
   I_CARS: '/about',
   STAYS: '/contact',
   ABOUT: '/blog',
