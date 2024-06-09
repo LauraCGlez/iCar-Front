@@ -1,20 +1,22 @@
-import { Link, LinkProps } from 'react-router-dom';
+import { Link, LinkProps, NavLink } from 'react-router-dom';
 import React from 'react';
-import './nav-link.css';
+import './dynamic-link.css';
 
 interface NavLinkProps extends LinkProps {
   variant?: 'link' | 'button-filled' | 'button-transparent' | 'wrapper';
   icon?: React.ReactNode;
+  isNavLink?: boolean;
 }
 
-const NavLink = (props: NavLinkProps) => {
+const DynamicLink = (props: NavLinkProps) => {
   const {
     to,
     children,
     variant,
-    icon
+    icon,
+    isNavLink
   } = props;
-  const defaultClassName = 'nav-link';
+  const defaultClassName = 'link';
 
   const getVariantClass = () => {
     if (variant) {
@@ -27,7 +29,12 @@ const NavLink = (props: NavLinkProps) => {
 
   const variantClass = getVariantClass();
 
-  return (
+  return isNavLink ? (
+    <NavLink className={`${defaultClassName} ${variantClass}`} to={to}>
+      {icon}
+      {children}
+    </NavLink>
+  ) : (
     <Link className={`${defaultClassName} ${variantClass}`} to={to}>
       {icon}
       {children}
@@ -35,4 +42,4 @@ const NavLink = (props: NavLinkProps) => {
   );
 };
 
-export default NavLink;
+export default DynamicLink;

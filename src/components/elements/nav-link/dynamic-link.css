@@ -1,4 +1,4 @@
-.nav-link {
+.link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,20 +9,20 @@
     color: var(--color-secondary);
 }
 
-.nav-link--link {
+.link--link {
     color: var(--color-secondary);
     transition: 0.5s;
-    &:focus{
-        border-bottom-color: var(--color-primary-75);
-    }
     &:hover {
         svg {
             animation: icon-rotate 0.5s ease-out;
         }
     }
 }
+.link--link.active {
+    border-bottom-color: var(--color-primary-75);
+}
 
-.nav-link--button--filled {
+.link--button--filled {
     border-block: 0.125rem solid transparent;
     border-radius: 0.5rem;
     min-width: 6.5rem;
@@ -31,7 +31,7 @@
     background-color: var(--color-secondary);
 }
 
-.nav-link--button--transparent {
+.link--button--transparent {
     border-block: 0.125rem solid transparent;
     border-radius: 0.5rem;
     min-width: 6.5rem;
@@ -40,7 +40,7 @@
     background-color: transparent;
 }
 
-.nav-link--wrapper {
+.link--wrapper {
     display: inline;
     font-size: inherit;
     font-weight: inherit;
