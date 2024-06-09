@@ -6,6 +6,7 @@
     border-block: 0.313rem solid transparent;
     font-weight: var(--font-weight-semi-bold);
     font-size: var(--font-size-14);
+    color: var(--color-secondary);
 }
 
 .nav-link--link {
@@ -40,9 +41,10 @@
 }
 
 .nav-link--wrapper {
-    gap: 0;
-    font-size: var(--font-size-16);
-    font-weight: var(--font-weight-regular);
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
     border: none;
 }
 
