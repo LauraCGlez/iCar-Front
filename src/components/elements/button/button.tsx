@@ -10,35 +10,42 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = (props: ButtonProps) => {
-  const { variant, size, icon, iconSvg , text} = props;
+  const {
+    variant,
+    size,
+    icon,
+    iconSvg,
+    text,
+    onClick
+  } = props;
   const defaultClass = 'button';
 
   const getVariantClass = () => {
     const variantMap = {
-      'primary': `${defaultClass}--primary`,
-      'secondary': `${defaultClass}--secondary`,
-      'tertiary': `${defaultClass}--tertiary`,
-      'newsletter': `${defaultClass}--newsletter`
+      primary: `${defaultClass}--primary`,
+      secondary: `${defaultClass}--secondary`,
+      tertiary: `${defaultClass}--tertiary`,
+      newsletter: `${defaultClass}--newsletter`,
     };
     return variantMap[variant] || '';
   };
 
   const getSizeClass = () => {
     const sizeMap = {
-      'small': `${defaultClass}--small`,
-      'medium': `${defaultClass}--medium`,
-      'large': `${defaultClass}--large`,
-      'largest': `${defaultClass}--largest`
+      small: `${defaultClass}--small`,
+      medium: `${defaultClass}--medium`,
+      large: `${defaultClass}--large`,
+      largest: `${defaultClass}--largest`,
     };
     return sizeMap[size] || '';
   };
 
   const getIconClass = () => {
     const iconMap = {
-      'none': '',
-      'left': `${defaultClass}--icon-left`,
-      'right': `${defaultClass}--icon-right`,
-      'icon-only': `${defaultClass}--icon-only`
+      none: '',
+      left: `${defaultClass}--icon-left`,
+      right: `${defaultClass}--icon-right`,
+      'icon-only': `${defaultClass}--icon-only`,
     };
     return iconMap[icon] || '';
   };
@@ -49,20 +56,20 @@ const Button = (props: ButtonProps) => {
 
   const getButtonContent = () => {
     const contentMap = {
-      'left': (
+      left: (
         <>
           {iconSvg}
           {text}
         </>
       ),
-      'right': (
+      right: (
         <>
           {text}
           {iconSvg}
         </>
       ),
       'icon-only': iconSvg,
-      'none': text
+      none: text,
     };
     return contentMap[icon] || text;
   };
@@ -70,7 +77,10 @@ const Button = (props: ButtonProps) => {
   const buttonContent = getButtonContent();
 
   return (
-    <button className={`${defaultClass} ${variantClass} ${sizeClass} ${iconClass}`}>
+    <button
+      className={`${defaultClass} ${variantClass} ${sizeClass} ${iconClass}`}
+      onClick={onClick}
+    >
       {buttonContent}
     </button>
   );
