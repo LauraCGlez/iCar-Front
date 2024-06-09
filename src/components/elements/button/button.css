@@ -1,0 +1,26 @@
+.button {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+    min-width: 5.125rem;
+    min-height: 2.5rem;
+    padding: 0.5rem 1rem;
+    border: 0.125rem solid transparent;
+    outline: 0.125rem solid transparent;
+    outline-offset: 0.063rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-family: inherit;
+    font-weight: var(--font-weight-medium);
+}
+
+.button--newsletter {
+    color: var(--color-neutral-0);
+    background-color: var(--color-secondary);
+}
+
+.button--largest {
+    min-height: 3.5rem;
+    font-weight: var(--font-weight-semi-bold);
+}

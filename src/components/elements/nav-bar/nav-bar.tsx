@@ -1,10 +1,10 @@
 import './nav-bar.css';
-import ICarLogo from '../../../assets/logos/i-car-logo.tsx';
+import ICarLogo from '../../../assets/vectors/logos/i-car-logo.tsx';
 import NavLink from '../nav-link/nav-link.tsx';
 import {
   DirectionsCarRoundedIcon,
   HotelRoundedIcon,
-} from '../../../assets/icons/mui-icons.ts';
+} from '../../../assets/mui-icons.ts';
 
 const NavBar = () => {
   return (

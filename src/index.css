@@ -12,10 +12,24 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Colors */
-  --color-primary: #8dd3bb;
-  --color-secondary: #000000;
+  --color-primary-100: #82cbb2;
+  --color-primary-75: #8dd3bb;
+  --color-primary-50: #9be0c8;
+  --color-primary-25: #a5ebd3;
+  --color-primary-0: #cdeae1;
+
+  --color-secondary: #112211;
+  --color-secondary-op-80: #112211CC;
+  --color-secondary-op-70: #112211B3;
+  --color-secondary-op-20: #11221133;
   --color-accent: #ff8682;
-  --color-neutral: #ffffff;
+  --color-error: #FD736E;
+
+  --color-neutral-100: #1C1B1F;
+  --color-neutral-75: #79747e;
+  --color-neutral-50: #8f8c91;
+  --color-neutral-25: #d2d1d3;
+  --color-neutral-0: #ffffff;
 
   /* Typography */
   --font-primary: 'Monserrat';
@@ -34,6 +48,7 @@
   --font-size-32: 2rem; /* 32px */
   --font-size-36: 2.25rem; /* 36px */
   --font-size-40: 2.5rem; /* 40px */
+  --font-size-44: 2.75rem; /* 44px */
 
   /* Spacing */
   --page-padding-vt: 1.313rem;
@@ -53,7 +68,6 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--color-secondary);
 }
 
 ul {
