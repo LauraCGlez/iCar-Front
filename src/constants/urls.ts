@@ -1,9 +1,11 @@
 export const APP_URLS = {
   BASE_URL: '/',
   HOME: '/home',
-  I_CARS: '/about',
-  STAYS: '/contact',
-  ABOUT: '/blog',
+  I_CARS: '/icars',
+  STAYS: '/stays',
+  ABOUT: '/about',
+  LOGIN: '/login',
+  SIGNUP: '/signup',
   NOT_FOUND: '/404',
 };
 
