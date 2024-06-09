@@ -1,10 +1,11 @@
 import './nav-bar.css';
 import ICarLogo from '../../../assets/vectors/logos/i-car-logo.tsx';
-import NavLink from '../nav-link/nav-link.tsx';
+import DynamicLink from '../nav-link/dynamic-link.tsx';
 import {
   DirectionsCarRoundedIcon,
   HotelRoundedIcon,
 } from '../../../assets/mui-icons.ts';
+import { APP_URLS } from '../../../constants/urls.ts';
 
 const NavBar = () => {
   return (
@@ -12,30 +13,36 @@ const NavBar = () => {
       <div className="nav-bar__content">
         <ul className="nav-bar__list">
           <li className="nav-bar__list-item">
-            <NavLink
-              to="/icars"
+            <DynamicLink
+              to={APP_URLS.I_CARS}
               variant="link"
               icon={<DirectionsCarRoundedIcon />}
+              isNavLink
             >
               Find iCars
-            </NavLink>
+            </DynamicLink>
           </li>
           <li className="nav-bar__list-item">
-            <NavLink to="/stays" variant="link" icon={<HotelRoundedIcon />}>
+            <DynamicLink
+              to={APP_URLS.STAYS}
+              variant="link"
+              icon={<HotelRoundedIcon />}
+              isNavLink
+            >
               Find Stays
-            </NavLink>
+            </DynamicLink>
           </li>
         </ul>
-        <NavLink variant="wrapper" to="/home">
+        <DynamicLink variant="wrapper" to={APP_URLS.HOME}>
           <ICarLogo className="nav-bar__logo" />
-        </NavLink>
+        </DynamicLink>
         <div className="nav-bar__login-section">
-          <NavLink to="/login" variant="button-transparent">
+          <DynamicLink to={APP_URLS.LOGIN} variant="button-transparent">
             Login
-          </NavLink>
-          <NavLink to="/signup" variant="button-filled">
+          </DynamicLink>
+          <DynamicLink to={APP_URLS.SIGNUP} variant="button-filled">
             Sign Up
-          </NavLink>
+          </DynamicLink>
         </div>
       </div>
     </div>

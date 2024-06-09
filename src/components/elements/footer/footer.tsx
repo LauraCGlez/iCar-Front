@@ -1,7 +1,7 @@
 import './footer.css';
 import NewsletterCard from '../newsletter-card/newsletter-card.tsx';
 import { FacebookRoundedIcon, InstagramIcon, XIcon, YouTubeIcon } from '../../../assets/mui-icons.ts';
-import NavLink from '../nav-link/nav-link.tsx';
+import DynamicLink from '../nav-link/dynamic-link.tsx';
 import ICarLogo from '../../../assets/vectors/logos/i-car-logo.tsx';
 import { EXTERNAL_URLS, APP_URLS } from '../../../constants/urls.ts';
 import { useLocation } from 'react-router-dom';
@@ -22,9 +22,9 @@ const Footer = () => {
         </div>
         <div className="footer__bottom">
           <div className="footer__social-container">
-            <NavLink to={APP_URLS.HOME}>
+            <DynamicLink to={APP_URLS.HOME}>
               <ICarLogo className="footer__logo" variant="alternative" />
-            </NavLink>
+            </DynamicLink>
             <div className="footer__social">
               <a href={EXTERNAL_URLS.FACEBOOK} className="footer__social-link">
                 <FacebookRoundedIcon />
@@ -46,16 +46,16 @@ const Footer = () => {
               <h3 className="footer__heading">Our Destinations</h3>
               <ul className="footer__links">
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Canada</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Canada</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Alaska</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Alaska</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>France</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>France</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Iceland</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Iceland</DynamicLink>
                 </li>
               </ul>
             </div>
@@ -63,16 +63,16 @@ const Footer = () => {
               <h3 className="footer__heading">Our Activities</h3>
               <ul className="footer__links">
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Northern Lights</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Northern Lights</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Cruising & Sailing</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Cruising & Sailing</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Multi-activities</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Multi-activities</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Kayaking</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Kayaking</DynamicLink>
                 </li>
               </ul>
             </div>
@@ -80,16 +80,16 @@ const Footer = () => {
               <h3 className="footer__heading">Travel Blogs</h3>
               <ul className="footer__links">
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Bali Travel Guide</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Bali Travel Guide</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Sri Lanks Travel Guide</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Sri Lanks Travel Guide</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Peru Travel Guide</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Peru Travel Guide</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Bali Travel Guide</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Bali Travel Guide</DynamicLink>
                 </li>
               </ul>
             </div>
@@ -97,10 +97,10 @@ const Footer = () => {
               <h3 className="footer__heading">About Us</h3>
               <ul className="footer__links">
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Our Story</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Our Story</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Work with us</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Work with us</DynamicLink>
                 </li>
               </ul>
             </div>
@@ -108,10 +108,10 @@ const Footer = () => {
               <h3 className="footer__heading">Contact Us</h3>
               <ul className="footer__links">
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Our Story</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Our Story</DynamicLink>
                 </li>
                 <li className="footer__link">
-                  <NavLink to={APP_URLS.NOT_FOUND}>Work with us</NavLink>
+                  <DynamicLink to={APP_URLS.NOT_FOUND}>Work with us</DynamicLink>
                 </li>
               </ul>
             </div>
