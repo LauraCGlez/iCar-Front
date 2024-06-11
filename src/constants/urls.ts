@@ -4,8 +4,9 @@ export const APP_URLS = {
   I_CARS: '/icars',
   STAYS: '/stays',
   ABOUT: '/about',
-  LOGIN: '/login',
-  SIGNUP: '/signup',
+  LOGIN: '/auth/login',
+  SIGNUP: '/auth/signup',
+  UNDER_DEVELOPMENT: '/under-development',
   NOT_FOUND: '/404',
 };
 
