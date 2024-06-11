@@ -1,6 +1,7 @@
 .footer {
   background-color: var(--color-primary-75);
   padding-inline: var(--page-padding-hz);
+  margin-top: 9rem;
   padding-top: 2rem;
   padding-bottom: 4rem;
 }
