@@ -17,8 +17,9 @@ import FindBooking from "./components/booking/FindBooking"
 import Login from "./components/auth/Login"
 import Registration from "./components/auth/Registration"
 import Profile from "./components/auth/Profile"
-import { AuthProvider } from "./components/auth/AuthProvider"
+import { AuthProvider } from "./components/auth/AuthProvider.jsx"
 import RequireAuth from "./components/auth/RequireAuth"
+import UnderDevelopment from "./components/layout/UnderMaintenance/UnderDevelopment.jsx";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/edit-car/:carId" element={<EditCar />} />
             <Route path="/existing-cars" element={<ExistingCars />} />
             <Route path="/add-car" element={<AddCar />} />
+            <Route path="/under-development" element={<UnderDevelopment />} />
 
             <Route
               path="/book-car/:carId"

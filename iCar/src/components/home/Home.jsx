@@ -5,7 +5,7 @@ import Parallax from "../common/Parallax"
 import CarCarousel from "../common/CarCarousel.jsx"
 import CarSearch from "../common/CarSearch.jsx"
 import { useLocation } from "react-router-dom"
-import { useAuth } from "../auth/AuthProvider"
+import { useAuth } from "../auth/AuthProvider.jsx"
 const Home = () => {
 	const location = useLocation()
 

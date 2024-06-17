@@ -29,7 +29,7 @@ export async function addCar(carType, carPrice) {
 	}
 }
 
-/* This function gets all car types from thee database */
+/* This function gets all car types from the database */
 export async function getCarTypes() {
 	try {
 		const response = await api.get("/cars/car/types")

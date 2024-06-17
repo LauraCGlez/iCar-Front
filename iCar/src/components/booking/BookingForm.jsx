@@ -1,11 +1,10 @@
 import React, { useEffect } from "react"
 import moment from "moment"
 import { useState } from "react"
-import { Form, FormControl, Button } from "react-bootstrap"
+import { Form, FormControl } from "react-bootstrap"
 import BookingSummary from "./BookingSummary"
 import { bookCar, getCarById } from "../utils/ApiFunctions"
 import { useNavigate, useParams } from "react-router-dom"
-import { useAuth } from "../auth/AuthProvider"
 
 const BookingForm = () => {
 	const [validated, setValidated] = useState(false)
@@ -45,7 +44,13 @@ const currentUser = localStorage.getItem("userId")
 
 	useEffect(() => {
 		getCarPriceById(carId)
-	}, [carId])
+			.then(price => {
+				console.log(price);
+			})
+			.catch(error => {
+				console.error(error);
+			});
+	}, [carId]);
 
 	const calculatePayment = () => {
 		const checkInDate = moment(booking.checkInDate)

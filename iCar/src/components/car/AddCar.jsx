@@ -11,7 +11,7 @@ const AddCar =  () => {
 		carImage: defaultImage,
 	})
 
-	const success = addCar(newCar.carType, newCar.carPrice, newCar.carImage);
+	//const success = addCar(newCar.carType, newCar.carPrice, newCar.carImage);
 	const [successMessage, setSuccessMessage] = useState("")
 	const [errorMessage, setErrorMessage] = useState("")
 

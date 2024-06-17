@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { getCarById, updateCar } from "../utils/ApiFunctions"
 import { Link, useParams } from "react-router-dom"
+import defaultImage from "../../assets/images/A.jpeg"
 
 const EditCar = () => {
 	const [car, setRoom] = useState({
@@ -116,7 +117,7 @@ const EditCar = () => {
 							/>
 							{imagePreview && (
 								<img
-									src={`data:image/jpeg;base64,${imagePreview}`}
+									src={defaultImage}
 									alt="Car preview"
 									style={{ maxWidth: "400px", maxHeight: "400" }}
 									className="mt-3"

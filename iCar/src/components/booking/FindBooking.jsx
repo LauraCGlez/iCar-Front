@@ -60,7 +60,7 @@ const FindBooking = () => {
 		setTimeout(() => setIsLoading(false), 2000)
 	}
 
-	const handleBookingCancellation = async (bookingId) => {
+	const handleBookingCancellation = async () => {
 		try {
 			await cancelBooking(bookingInfo.id)
 			setIsDeleted(true)
@@ -125,7 +125,7 @@ const FindBooking = () => {
 
 						{!isDeleted && (
 							<button
-								onClick={() => handleBookingCancellation(bookingInfo.id)}
+								onClick={() => handleBookingCancellation()}
 								className="btn btn-danger">
 								Cancel Booking
 							</button>

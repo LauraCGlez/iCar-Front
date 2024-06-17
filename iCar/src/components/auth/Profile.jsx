@@ -29,31 +29,33 @@ const Profile = () => {
 	const token = localStorage.getItem("token")
 
 	useEffect(() => {
-		const fetchUser = async () => {
-			try {
-				const userData = await getUser(userId, token)
-				setUser(userData)
-			} catch (error) {
-				console.error(error)
-			}
-		}
+		const fetchUser = () => {
+			getUser(userId, token)
+				.then(userData => {
+					setUser(userData);
+				})
+				.catch(error => {
+					console.error(error);
+				});
+		};
 
-		fetchUser()
-	}, [userId])
+		fetchUser();
+	}, [userId, token]);
 
 	useEffect(() => {
-		const fetchBookings = async () => {
-			try {
-				const response = await getBookingsByUserId(userId, token)
-				setBookings(response)
-			} catch (error) {
-				console.error("Error fetching bookings:", error.message)
-				setErrorMessage(error.message)
-			}
-		}
+		const fetchBookings = () => {
+			getBookingsByUserId(userId, token)
+				.then(response => {
+					setBookings(response);
+				})
+				.catch(error => {
+					console.error("Error fetching bookings:", error.message);
+					setErrorMessage(error.message);
+				});
+		};
 
-		fetchBookings()
-	}, [userId])
+		fetchBookings();
+	}, [userId, token]);
 
 	const handleDeleteAccount = async () => {
 		const confirmed = window.confirm(

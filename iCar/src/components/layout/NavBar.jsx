@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react"
-import { NavLink, Link } from "react-router-dom"
+import {NavLink, Link, Route} from "react-router-dom"
 import Logout from "../auth/Logout"
 
 
@@ -46,6 +46,11 @@ const NavBar = () => {
 								</NavLink>
 							</li>
 						)}
+						<li className="nav-item">
+							<NavLink className="nav-link" aria-current="page" to={"/under-development"}>
+								Future feature
+							</NavLink>
+						</li>
 					</ul>
 
 					<ul className="d-flex navbar-nav">

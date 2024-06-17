@@ -1,8 +1,8 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Card, Col } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import defaultImage from "../../assets/images/A.jpeg"
 
-const defaultImage = "../../assets/images/A.jpeg"
 const CarCard = ({ car }) => {
 	return (
 		<Col key={car.id} className="mb-4" xs={12}>
