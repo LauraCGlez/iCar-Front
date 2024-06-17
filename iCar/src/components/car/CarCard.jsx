@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { Card, Col } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
+const defaultImage = "../../assets/images/A.jpeg"
 const CarCard = ({ car }) => {
 	return (
 		<Col key={car.id} className="mb-4" xs={12}>
@@ -11,7 +12,7 @@ const CarCard = ({ car }) => {
 						<Link to={`/book-car/${car.id}`}>
 							<Card.Img
 								variant="top"
-								src={`data:image/png;base64, ${car.photo}`}
+								src={defaultImage}
 								alt="Car Photo"
 								style={{ width: "100%", maxWidth: "200px", height: "auto" }}
 							/>

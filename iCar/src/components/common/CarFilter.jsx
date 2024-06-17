@@ -7,10 +7,10 @@ const CarFilter = ({ data, setFilteredData }) => {
 		const selectedType = e.target.value
 		setFilter(selectedType)
 
-		const filteredRooms = data.filter((room) =>
-			room.roomType.toLowerCase().includes(selectedType.toLowerCase())
+		const filteredCars = data.filter((car) =>
+			car.carType.toLowerCase().includes(selectedType.toLowerCase())
 		)
-		setFilteredData(filteredRooms)
+		setFilteredData(filteredCars)
 	}
 
 	const clearFilter = () => {
@@ -18,12 +18,12 @@ const CarFilter = ({ data, setFilteredData }) => {
 		setFilteredData(data)
 	}
 
-	const roomTypes = ["", ...new Set(data.map((room) => room.roomType))]
+	const carTypes = ["", ...new Set(data.map((car) => car.carType))]
 
 	return (
 		<div className="input-group mb-3">
 			<span className="input-group-text" id="room-type-filter">
-				FIlter cars by type
+				Filter cars by type
 			</span>
 			<select
 				className="form-select"
@@ -31,7 +31,7 @@ const CarFilter = ({ data, setFilteredData }) => {
 				value={filter}
 				onChange={handleSelectChange}>
 				<option value="">select a car type to filter....</option>
-				{roomTypes.map((type, index) => (
+				{carTypes.map((type, index) => (
 					<option key={index} value={String(type)}>
 						{String(type)}
 					</option>

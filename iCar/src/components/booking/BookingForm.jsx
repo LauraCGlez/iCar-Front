@@ -11,7 +11,7 @@ const BookingForm = () => {
 	const [validated, setValidated] = useState(false)
 	const [isSubmitted, setIsSubmitted] = useState(false)
 	const [errorMessage, setErrorMessage] = useState("")
-	const [roomPrice, setRoomPrice] = useState(0)
+	const [carPrice, setCarPrice] = useState(0)
 
 const currentUser = localStorage.getItem("userId")
 
@@ -24,7 +24,7 @@ const currentUser = localStorage.getItem("userId")
 		numOfChildren: ""
 	})
 
-	const { roomId } = useParams()
+	const { carId } = useParams()
 	const navigate = useNavigate()
 
 	const handleInputChange = (e) => {
@@ -34,24 +34,24 @@ const currentUser = localStorage.getItem("userId")
 	}
 
 
-	const getCarPriceById = async (roomId) => {
+	const getCarPriceById = async (carId) => {
 		try {
-			const response = await getCarById(roomId)
-			setRoomPrice(response.roomPrice)
+			const response = await getCarById(carId)
+			setCarPrice(response.carPrice)
 		} catch (error) {
 			throw new Error(error)
 		}
 	}
 
 	useEffect(() => {
-		getCarPriceById(roomId)
-	}, [roomId])
+		getCarPriceById(carId)
+	}, [carId])
 
 	const calculatePayment = () => {
 		const checkInDate = moment(booking.checkInDate)
 		const checkOutDate = moment(booking.checkOutDate)
 		const diffInDays = checkOutDate.diff(checkInDate, "days")
-		const paymentPerDay = roomPrice ? roomPrice : 0
+		const paymentPerDay = carPrice ? carPrice : 0
 		return diffInDays * paymentPerDay
 	}
 
@@ -85,7 +85,7 @@ const currentUser = localStorage.getItem("userId")
 
 	const handleFormSubmit = async () => {
 		try {
-			const confirmationCode = await bookCar(roomId, booking)
+			const confirmationCode = await bookCar(carId, booking)
 			setIsSubmitted(true)
 			navigate("/booking-success", { state: { message: confirmationCode } })
 		} catch (error) {

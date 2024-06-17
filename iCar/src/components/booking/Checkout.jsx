@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import defaultImage from "../../assets/images/A.jpeg"
 import BookingForm from "../booking/BookingForm"
 import {
 	FaUtensils,
@@ -51,7 +52,7 @@ const Checkout = () => {
 						) : (
 							<div className="room-info">
 								<img
-									src={`data:image/png;base64,${carInfo.photo}`}
+									src={defaultImage}
 									alt="Car photo"
 									style={{ width: "100%", height: "200px" }}
 								/>

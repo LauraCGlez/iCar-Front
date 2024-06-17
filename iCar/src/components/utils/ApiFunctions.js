@@ -4,13 +4,15 @@ export const api = axios.create({
 	baseURL: "http://localhost:8080"
 })
 
-export const getHeader = () => {
-	const token = localStorage.getItem("token")
-	return {
-		Authorization: `Bearer ${token}`,
-		"Content-Type": "application/json"
+api.interceptors.request.use((config) => {
+	const token = localStorage.getItem("token");
+	if (token) {
+		config.headers.Authorization = `Bearer ${token}`;
 	}
-}
+	return config;
+}, (error) => {
+	return Promise.reject(error);
+});
 
 /* This function adds a new car to the database */
 export async function addCar(carType, carPrice) {
@@ -18,9 +20,7 @@ export async function addCar(carType, carPrice) {
 	formData.append("carType", carType);
 	formData.append("carPrice", carPrice);
 
-	const response = await api.post("/cars/add/new-car", formData, {
-		headers: getHeader()
-	});
+	const response = await api.post("/cars/add/new-car", formData);
 
 	if (response.status === 201) {
 		return true;
@@ -51,9 +51,7 @@ export async function getAllCars() {
 /* This function deletes a car by the Id */
 export async function deleteCar(carId) {
 	try {
-		const result = await api.delete(`/cars/delete/car/${carId}`, {
-			headers: getHeader()
-		})
+		const result = await api.delete(`/cars/delete/car/${carId}`)
 		return result.data
 	} catch (error) {
 		throw new Error(`Error deleting car ${error.message}`)
@@ -66,9 +64,7 @@ export async function updateCar(carId, carData) {
 	formData.append("carPrice", carData.carPrice)
 	formData.append("photo", carData.photo)
 
-	const response = await api.put(`/cars/update/${carId}`, formData,{
-		headers: getHeader()
-	})
+	const response = await api.put(`/cars/update/${carId}`, formData)
 	return response
 }
 
@@ -99,9 +95,7 @@ export async function bookCar(carId, booking) {
 /* This function gets alll bokings from the database */
 export async function getAllBookings() {
 	try {
-		const result = await api.get("/bookings/all-bookings", {
-			headers: getHeader()
-		})
+		const result = await api.get("/bookings/all-bookings")
 		return result.data
 	} catch (error) {
 		throw new Error(`Error fetching bookings : ${error.message}`)
@@ -173,9 +167,7 @@ export async function loginUser(login) {
 /*  This is function to get the user profile */
 export async function getUserProfile(userId, token) {
 	try {
-		const response = await api.get(`users/profile/${userId}`, {
-			headers: getHeader()
-		})
+		const response = await api.get(`users/profile/${userId}`)
 		return response.data
 	} catch (error) {
 		throw error
@@ -185,9 +177,7 @@ export async function getUserProfile(userId, token) {
 /* This isthe function to delete a user */
 export async function deleteUser(userId) {
 	try {
-		const response = await api.delete(`/users/delete/${userId}`, {
-			headers: getHeader()
-		})
+		const response = await api.delete(`/users/delete/${userId}`)
 		return response.data
 	} catch (error) {
 		return error.message
@@ -197,9 +187,7 @@ export async function deleteUser(userId) {
 /* This is the function to get a single user */
 export async function getUser(userId, token) {
 	try {
-		const response = await api.get(`/users/${userId}`, {
-			headers: getHeader()
-		})
+		const response = await api.get(`/users/${userId}`)
 		return response.data
 	} catch (error) {
 		throw error
@@ -209,9 +197,7 @@ export async function getUser(userId, token) {
 /* This is the function to get user bookings by the user id */
 export async function getBookingsByUserId(userId, token) {
 	try {
-		const response = await api.get(`/bookings/user/${userId}/bookings`, {
-			headers: getHeader()
-		})
+		const response = await api.get(`/bookings/user/${userId}/bookings`)
 		return response.data
 	} catch (error) {
 		console.error("Error fetching bookings:", error.message)

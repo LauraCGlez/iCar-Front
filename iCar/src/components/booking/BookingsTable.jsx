@@ -5,7 +5,7 @@ import DateSlider from "../common/DateSlider"
 const BookingsTable = ({ bookingInfo, handleBookingCancellation }) => {
 	const [filteredBookings, setFilteredBookings] = useState(bookingInfo)
 
-	const filterBooknigs = (startDate, endDate) => {
+	const filterBookings = (startDate, endDate) => {
 		let filtered = bookingInfo
 		if (startDate && endDate) {
 			filtered = bookingInfo.filter((booking) => {
@@ -25,7 +25,7 @@ const BookingsTable = ({ bookingInfo, handleBookingCancellation }) => {
 
 	return (
 		<section className="p-4">
-			<DateSlider onDateChange={filterBooknigs} onFilterChange={filterBooknigs} />
+			<DateSlider onDateChange={filterBookings} onFilterChange={filterBookings} />
 			<table className="table table-bordered table-hover shadow">
 				<thead>
 					<tr>
@@ -70,7 +70,7 @@ const BookingsTable = ({ bookingInfo, handleBookingCancellation }) => {
 					))}
 				</tbody>
 			</table>
-			{filterBooknigs.length === 0 && <p> No booking found for the selected dates</p>}
+			{filterBookings.length === 0 && <p> No booking found for the selected dates</p>}
 		</section>
 	)
 }

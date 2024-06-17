@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { getAllCars } from "../utils/ApiFunctions"
 import { Link } from "react-router-dom"
 import { Card, Carousel, Col, Container, Row } from "react-bootstrap"
+import defaultImage from "../../assets/images/A.jpeg"
 
 const CarCarousel = () => {
 	const [cars, setCars] = useState([{ id: "", carType: "", carPrice: "", photo: "" }])
@@ -45,7 +46,7 @@ const CarCarousel = () => {
 											<Link to={`/book-car/${car.id}`}>
 												<Card.Img
 													variant="top"
-													src={`data:image/png;base64, ${car.photo}`}
+													src={defaultImage}
 													alt="Car Photo"
 													className="w-100"
 													style={{ height: "200px" }}

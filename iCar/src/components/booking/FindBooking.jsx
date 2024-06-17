@@ -25,7 +25,7 @@ const FindBooking = () => {
 		id: "",
 		bookingConfirmationCode: "",
 		car: { id: "", carType: "" },
-		roomNumber: "",
+		carNumber: "",
 		checkInDate: "",
 		checkOutDate: "",
 		guestName: "",

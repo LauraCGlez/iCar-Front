@@ -2,13 +2,16 @@ import React, { useState } from "react"
 import {addCar} from "../utils/ApiFunctions"
 import CarTypeSelector from "../common/CarTypeSelector.jsx"
 import { Link } from "react-router-dom"
+import defaultImage from "../../assets/images/A.jpeg"
 
-const AddCar = () => {
+const AddCar =  () => {
 	const [newCar, setNewCar] = useState({
 		carType: "",
-		carPrice: ""
+		carPrice: "",
+		carImage: defaultImage,
 	})
 
+	const success = addCar(newCar.carType, newCar.carPrice, newCar.carImage);
 	const [successMessage, setSuccessMessage] = useState("")
 	const [errorMessage, setErrorMessage] = useState("")
 
@@ -22,7 +25,7 @@ const AddCar = () => {
 				value = ""
 			}
 		}
-		setNewCar({ ...newCar, [name]: value })
+		setNewCar({...newCar, [name]: value})
 	}
 
 	const handleSubmit = async (e) => {
@@ -31,7 +34,7 @@ const AddCar = () => {
 			const success = await addCar(newCar.carType, newCar.carPrice)
 			if (success !== undefined) {
 				setSuccessMessage("A new car was  added successfully !")
-				setNewCar({ carType: "", carPrice: "" })
+				setNewCar({carType: "", carPrice: ""})
 				setErrorMessage("")
 			} else {
 				setErrorMessage("Error adding new car")
@@ -71,7 +74,7 @@ const AddCar = () => {
 							</div>
 							<div className="mb-3">
 								<label htmlFor="carPrice" className="form-label">
-									Car Price
+									Car Price per Night
 								</label>
 								<input
 									required

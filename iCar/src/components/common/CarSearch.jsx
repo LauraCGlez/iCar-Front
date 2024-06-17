@@ -94,8 +94,8 @@ const CarSearch = () => {
 								<Form.Label>Car Type</Form.Label>
 								<div className="d-flex">
 									<CarTypeSelector
-										handleRoomInputChange={handleInputChange}
-										newRoom={searchQuery}
+										handleCarInputChange={handleInputChange}
+										newCar={searchQuery}
 									/>
 									<Button variant="secondary" type="submit" className="ml-2">
 										Search
